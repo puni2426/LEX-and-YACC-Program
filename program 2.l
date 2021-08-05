@@ -1,17 +1,9 @@
 %{
-
-#include"y.tab.h"
-
+          #include "y.tab.h"
 %}
-
 %%
-
-[a] {return A;}
-
-[b] {return B;}
-
-. {return yytext[0];}
-
-"\n" {return NL;}
-
+[aA]  { return A; }
+[bB]  { return B; }
+"\n"  { return NL; }
+.   { return *yytext; }
 %%
